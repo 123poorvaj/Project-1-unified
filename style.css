@@ -1,0 +1,252 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#navbar {
+    height: 60px;
+    width: 100vw;
+}
+
+.home-section-bg-container {
+    margin-top: 60px;
+    background-color: rgb(255, 248, 243);
+    padding-bottom: 40px;
+    width: 100vw;
+}
+
+.logoimage {
+    height: 57px;
+    width: 57px;
+    opacity: 9.%;
+}
+
+@media(max-width:768px) {
+    .logoimage {
+        height: 47px;
+        width: 40px;
+        opacity: 9.%;
+    }
+}
+
+.logoHeading {
+    font-family: 'coven';
+    font-size: 23px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.navbar-nav {
+    margin-left: 34%;
+    font-family: 'roboto';
+    font-size: 16px;
+    padding: 3px;
+}
+
+.Sign-in-bottun {
+    background-color: lch(62.98% 89.3 53.41);
+    padding: 10px;
+    border-width: 0px;
+    border-radius: 14px;
+    width: 100px;
+}
+
+.hero-section-main-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: bold;
+}
+
+.herosection-discription {
+    font-size: 22px;
+    font-family: 'roboto';
+    font-weight: 500;
+    color: rgb(121, 123, 126);
+}
+
+@media(max-width:768px) {
+    .hero-section-main-heading {
+        font-size: 31px;
+    }
+    .herosection-discription {
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .navbar-nav {
+        margin-left: 0%;
+        font-family: 'roboto';
+        font-size: 16px;
+        padding: 3px;
+    }
+}
+
+.hero-scetion-button-1 {
+    width: 199px;
+    height: 59px;
+    background-color: hwb(30 0% 0%);
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    border-width: 0px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.hero-section-imge {
+    border-radius: 34px;
+}
+
+.hero-scetion-button-2 {
+    width: 199px;
+    height: 59px;
+    background-color: white;
+    color: black;
+    font-size: 17px;
+    font-weight: 400;
+    border-width: 2px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.Free-delivery-logo {
+    color: rgba(243, 72, 29, 0.95);
+    font-size: 25px;
+}
+
+.servise-card-container-heding {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+@media(max-width:576px) {
+    .servise-card-container-heding {
+        font-family: 'Playfair Display', serif;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 5px !important;
+    }
+}
+
+.servise-card-container-discription {
+    font-size: 15px;
+    font-family: 'roboto';
+    font-weight: 500;
+    color: rgb(121, 123, 126);
+}
+
+.popular-picks-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.popular-picks-discription {
+    font-size: 20px;
+    font-family: 'roboto';
+    font-weight: 500;
+    color: rgb(121, 123, 126);
+}
+
+.viwe-all-button {
+    color: black;
+    font-size: 20px;
+}
+
+@media(max-width:768px) {
+    .viwe-all-button {
+        font-size: 15px;
+    }
+    .popular-picks-heading {
+        font-size: 20px;
+    }
+    .popular-picks-discription {
+        font-size: 15px;
+    }
+}
+
+.popular-picks-sections {
+    background-color: #dfe1e1;
+    background-size: cover;
+    width: 100vw;
+}
+
+.popular-picks-sections-items-img {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 250px;
+}
+
+.popular-picks-section-items-discription {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.popular-picks-section-items-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.popular-picks-section-items-rating {
+    font-family: 'roboto';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ruppes {
+    font-size: 30px;
+    font-family: 'roboto';
+}
+
+@media(max-width:768px) {
+    .popular-picks-section-items-heading {
+        font-size: 20px;
+    }
+}
+
+.add-cart-button {
+    background-color: rgba(243, 72, 29, 0.95);
+    color: #ffffff;
+    width: 75px;
+    height: 55px;
+    padding: 10px;
+    margin: 15px;
+    border-width: 0px;
+    border-radius: 8px;
+}
+
+.Footer-heading {
+    font-size: 35px;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.footer-section-discription {
+    color: rgb(173, 174, 177);
+}
+
+@media(max-width:768px) {
+    .Footer-heading {
+        font-size: 25px;
+        color: #ffffff;
+    }
+}
+
+.bottom-section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.bottom-section-list-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2opx;
+    font-weight: bold;
+}
+
+.unorderd-list {
+    color: rgb(121, 123, 126);
+    font-size: 15px;
+    font-family: 'roboto';
+}
