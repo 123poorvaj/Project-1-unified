@@ -241,13 +241,77 @@
 
 .bottom-section-list-heading {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 2opx;
+    font-weight: bold;
 }
 
 .unorderd-list {
     color: rgb(121, 123, 126);
     font-size: 15px;
     font-family: 'roboto';
-
 }
 
+
+/*-----home page end------------------*/
+
+
+/*------sign in section---------
+.signin-section-bgcontainer {
+    background-color: #dfd0d0;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+
+#cccc {
+    text-align: center;
+}
+
+.signIn-block {
+    background-color: #ffffff;
+    width: 255px;
+    position: absolute;
+    left: 37%;
+    border-radius: 10px;
+}
+
+.signin-block-logo {
+    height: 45px;
+    width: 45px;
+}--*/
+
+.login-card {
+    width: 420px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.otp-btn {
+    background: #e85c12;
+    padding: 10px;
+    border: solid;
+    border-width: 0px;
+    border-radius: 5px;
+}
+
+.create-account {
+    color: #f26c21;
+    cursor: pointer;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.divider hr {
+    flex: 1;
+}
+
+.divider span {
+    margin: 0 10px;
+    color: gray;
+}
