@@ -175,35 +175,35 @@ const products = [{
         name: "Oslo 3-Seater Fabric Sofa",
         rent: "1,234",
         deposit: "3,000",
-        image: "./imag/Oslo 3-seater fabric sofa .jpeg"
+        image: "./Oslo 3-seater fabric sofa .png"
     },
     {
         id: 2,
         name: "Nordic Solid Wood Queen Bed",
         rent: "1,599",
         deposit: "8,300",
-        image: "./imag/Nordic Solid Wood Queen Bed.jpg"
+        image: "./Nordic Solid Wood Queen Bed.png"
     },
     {
         id: 3,
         name: "Artisan Crossleg Dining Table",
         rent: "899",
         deposit: "4,000",
-        image: "./imag/Artisan Crossleg dining Table.jpg"
+        image: "./Artisan Crossleg dining Table.png"
     },
     {
         id: 4,
         name: "Double Door Refrigerator",
         rent: "1,199",
         deposit: "7000",
-        image: "./imag/CoolTech Double-Door Refrigerator.jpg"
+        image: "./CoolTech Double-Door Refrigerator.png"
     },
     {
         id: 5,
         name: "Front Load Washer",
         rent: "999",
         deposit: "5,000",
-        image: "./imag/load washer.jpg"
+        image: "./load washer.png"
 
     },
     {
@@ -211,7 +211,7 @@ const products = [{
         name: "UltraView Smart TV",
         rent: "1,499",
         deposit: "5,500",
-        image: "./imag/ultraview smart tv.jpg"
+        image: "./ultraview smart tv.png"
     }
 
 ];
