@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="./style.css">
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RentEase-Furnitures</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -16,8 +17,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">
-            <div class="d-flex flex-row justify-content-start" onclick="gotoHome()">
-                <img src="./logoimage.png" class="logoimage mt-3" alt="logo">
+            <div class="d-flex flex-row justify-content-start" onclick="display('section-Home')">
+                <img src="./imag/logoimage.png" class="logoimage mt-3" alt="logo">
                 <h1 class="logoHeading mt-4 ml-0">Urban<span style="color:#FF8F00;">Rentals</span></h1>
             </div>
         </a>
@@ -28,26 +29,32 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#" onclick="gotoHome()">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#" onclick="display('section-Home')">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Browse</a>
+                    <a class="nav-link" href="#" onclick="display('allproducts')">Furniture</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Appliances</a>
+                    <a class="nav-link" href="#" onclick="display('allproducts')">Appliances</a>
                 </li>
 
             </ul>
-
-            <svg xmlns="http://www.w3.org/2000/svg" class="mr-4" width="25" height="25" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+            <div class="d-none d-lg-block" onclick="display('cartsection')" id="oncartsection">
+                <p id="cart-items-Count" class="cart-items-Count d-none d-lg-block">0</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-4" width="25" height="25" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
-                 </svg>
-            <button class="Sign-in-bottun" onclick="onsignInButton()">Sign in</button>
+              </svg>
+
+            </div>
+            <div onclick="display('cartsection')">
+                <p class="cart-text d-lg-none btn">Cart( <span class="cartCont">0</span> )</p>
+            </div>
+            <button class="Sign-in-bottun" onclick="display('section_sign_in')">Sign in</button>
 
         </div>
     </nav>
     <!----------------------------------------body section----------------------------------->
-    <div id="section-Home" class="">
+    <div id="section-Home" class="d-none">
         <div class="container-fluid">
             <div class="row">
                 <div class="home-section-bg-container">
@@ -58,20 +65,20 @@
                                 <h1 class="hero-section-main-heading">Rent Furniture &<br><span style="color: hwb(30 31% 1%); opacity:;">Appliances</span> for <br>Urban living</h1>
                                 <p class="herosection-discription">premium quality.zero commitment.From $499/mo- <br>Upgrade your space without the burden of ownership.</p>
                                 <div class="hero-sectoion-button-container">
-                                    <button class="hero-scetion-button-1">Browase Collection<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <button class="hero-scetion-button-1" onclick="display('allproducts')">Browase Collection<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
                                     </svg> 
                                 </button>
-                                    <button class="hero-scetion-button-2">Rent Appliances</button>
+                                    <button class="hero-scetion-button-2" onclick="display('allproducts')">Rent Appliances</button>
                                 </div>
                             </div>
 
                             <div class=" col-12 d-none d-lg-block col-md-6">
-                                <img src="./home page image.png" class="w-100 hero-section-imge mt-5" alt="">
+                                <img src="./imag/home page image.jpeg" class="w-100 hero-section-imge mt-5" alt="">
                             </div>
                         </div>
                         <div class=" col-12 d-lg-none col-lg-6 mr-3 text-center">
-                            <img src="./home page image.png" class="w-75 hero-section-imge" alt="">
+                            <img src="./imag/home page image.jpeg" class="w-75 hero-section-imge" alt="">
                         </div>
                     </div>
                 </div>
@@ -133,15 +140,15 @@
                             <h2 class="popular-picks-heading ">Popular Picks</h2>
                             <p class="popular-picks-discription ">Most rented items this month</p>
                         </div>
-                        <a href=" " class="viwe-all-button mr-5">View All <svg xmlns="http://www.w3.org/2000/svg " width="20 " height="20 " fill="currentColor " class="bi bi-arrow-right " viewBox="0 0 16 16 ">
+                        <a class="btn" class="viwe-all-button mr-5" onclick="display('allproducts')">View All <svg xmlns="http://www.w3.org/2000/svg "   width="20 " height="20 " fill="currentColor " class="bi bi-arrow-right " viewBox="0 0 16 16 ">
                             <path fill-rule="evenodd " d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8 "/>
                             </svg>
                             </a>
                     </div>
                     <!------------------------items card1-->
-                    <div class="popular-picks-sections-items col-12 col-md-6 col-lg-3 mb-3 pb-3 ">
+                    <div class="popular-picks-sections-items col-12 col-md-6 col-lg-3 mb-3 pb-3 " onclick="display('furniture-sofa')">
                         <div>
-                            <img src="./Oslo 3-seater fabric sofa .png " class="w-100 popular-picks-sections-items-img " alt="Oslo 3-seater fabric sofa ">
+                            <img src="./imag/Oslo 3-seater fabric sofa .jpeg " class="w-100 popular-picks-sections-items-img " alt="Oslo 3-seater fabric sofa ">
                         </div>
                         <div class="popular-picks-section-items-discription bg-white pl-2 ">
                             <h3 class="popular-picks-section-items-heading "> Osol 3-Seater Fabric Sofa</h3>
@@ -160,7 +167,7 @@
                                     </h1>
                                     <p style=" color: rgb(121, 123, 126); font-size: 15px; ">Per month</p>
                                 </div>
-                                <button class=" add-cart-button ">
+                                <button class=" add-cart-button " onclick="addToCart(1)">
                                         <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-cart2 " viewBox="0 0 16 16 ">
                                         <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1
                                         0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0 "/>
@@ -169,9 +176,9 @@
                         </div>
                     </div>
                     <!---------------ites crad2-------------->
-                    <div class="popular-picks-sections-items col-12 col-md-6 col-lg-3 mb-3 pb-3 " style="background-size: cover; ">
+                    <div class="popular-picks-sections-items col-12 col-md-6 col-lg-3 mb-3 pb-3 " onclick="display('sectionbed')" style="background-size: cover; ">
                         <div>
-                            <img src="./Nordic Solid Wood Queen Bed.png " class="w-100 popular-picks-sections-items-img " alt="Oslo 3-seater fabric sofa ">
+                            <img src="./imag/Nordic Solid Wood Queen Bed.jpg " class="w-100 popular-picks-sections-items-img " alt="Oslo 3-seater fabric sofa ">
                         </div>
                         <div class="popular-picks-section-items-discription bg-white pl-2 ">
                             <h3 class="popular-picks-section-items-heading ">Nordic Solid Wood Queen Bed</h3>
@@ -190,7 +197,7 @@
                                     </h1>
                                     <p style=" color: rgb(121, 123, 126); font-size: 15px; ">Per month</p>
                                 </div>
-                                <button class=" add-cart-button ">
+                                <button class=" add-cart-button" onclick="addToCart(2)">
                                         <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-cart2 " viewBox="0 0 16 16 ">
                                         <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1
                                         0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0 "/>
@@ -201,9 +208,9 @@
 
                     <!---------------ites crad3-------------->
 
-                    <div class="popular-picks-sections-items col-12 col-md-6 mb-3 col-lg-3 pb-3 " style="background-size: cover; ">
+                    <div class="popular-picks-sections-items col-12 col-md-6 mb-3 col-lg-3 pb-3 " onclick="display('sectionTable')" style="background-size: cover; ">
                         <div>
-                            <img src="./Artisan Crossleg dining Table.png " class="w-100 popular-picks-sections-items-img " alt="Oslo 3-seater fabric sofa ">
+                            <img src="./imag/Artisan Crossleg dining Table.jpg " class="w-100 popular-picks-sections-items-img " alt="Oslo 3-seater fabric sofa ">
                         </div>
                         <div class="popular-picks-section-items-discription bg-white pl-2 ">
                             <h3 class="popular-picks-section-items-heading ">Artisan Crossleg Dining Table</h3>
@@ -222,7 +229,7 @@
                                     </h1>
                                     <p style=" color: rgb(121, 123, 126); font-size: 15px; ">Per month</p>
                                 </div>
-                                <button class=" add-cart-button ">
+                                <button class=" add-cart-button " onclick="addToCart(3)">
                                         <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-cart2 " viewBox="0 0 16 16 ">
                                         <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1
                                         0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0 "/>
@@ -231,9 +238,9 @@
                         </div>
                     </div>
                     <!---------------ites crad4-------------->
-                    <div class="popular-picks-sections-items col-12 col-md-6 mb-3 col-lg-3 pb-3 " style="background-size: cover; ">
+                    <div class="popular-picks-sections-items col-12 col-md-6 mb-3 col-lg-3 pb-3" onclick="display('sectionCoolTech')" style="background-size: cover; ">
                         <div>
-                            <img src="./CoolTech Double-Door Refrigerator.png " class="w-100 popular-picks-sections-items-img " alt="Oslo 3-seater fabric sofa ">
+                            <img src="./imag/CoolTech Double-Door Refrigerator.jpg " class="w-100 popular-picks-sections-items-img " alt="Oslo 3-seater fabric sofa ">
                         </div>
                         <div class="popular-picks-section-items-discription bg-white pl-2 ">
                             <h3 class="popular-picks-section-items-heading "> CoolTech Double-Door Refrigerator</h3>
@@ -252,7 +259,7 @@
                                     </h1>
                                     <p style=" color: rgb(121, 123, 126); font-size: 15px; ">Per month</p>
                                 </div>
-                                <button class=" add-cart-button ">
+                                <button class=" add-cart-button" onclick="addToCart(4)">
                                         <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-cart2 " viewBox="0 0 16 16 ">
                                         <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1
                                         0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0 "/>
@@ -265,7 +272,149 @@
 
             </div>
         </div>
-        <!-------------------Footer section----------------------------------->
+        <!----feedback section------------------------------------------->
+        <div id="feedbacksection">
+            <div class="container-fluid py-5">
+
+                <div class="text-center mb-5">
+                    <h2 class="section-title">What Our Renters Say</h2>
+                    <p class="section-subtitle">Real feedback from happy customers</p>
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- Card 1 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+
+                            <p class="review">
+                                "Rented a full living room set for my new apartment. Delivery was on time, quality is excellent. Saved me lakhs!"
+                            </p>
+
+                            <div class="user">
+                                <div class="avatar">P</div>
+                                <div>
+                                    <h6>Priya Sharma</h6>
+                                    <span>Mumbai</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+
+                            <p class="review">
+                                "The washing machine and fridge I rented work perfectly. Maintenance team is super responsive."
+                            </p>
+
+                            <div class="user">
+                                <div class="avatar">R</div>
+                                <div>
+                                    <h6>Rahul Mehta</h6>
+                                    <span>Bangalore</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★☆</div>
+
+                            <p class="review">
+                                "Great concept for people who relocate often. Flexible tenure options are a game changer."
+                            </p>
+
+                            <div class="user">
+                                <div class="avatar">A</div>
+                                <div>
+                                    <h6>Ananya Gupta</h6>
+                                    <span>Delhi</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+
+                            <p class="review">
+                                "Been using UrbanRentals for 6 months now. The sofa and bed quality is premium."
+                            </p>
+
+                            <div class="user">
+                                <div class="avatar">V</div>
+                                <div>
+                                    <h6>Vikram Patel</h6>
+                                    <span>Pune</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <!-------------------------feed backsending----------------------------->
+        <div class="container-fluid bg-light py-5">
+
+            <div class="text-center mb-4">
+                <h2 class="title">Share Your Experience</h2>
+                <p class="subtitle">We'd love to hear from you</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+
+                    <div class="feedback-card">
+
+                        <form id="feedbackForm">
+
+                            <label class="form-label">Your Name</label>
+                            <input type="text" class="form-control mb-3" id="name" placeholder="John Doe">
+
+                            <label class="form-label">Rating</label>
+                            <div class="rating-stars mb-3">
+                                <span class="star" data-value="1">☆</span>
+                                <span class="star" data-value="2">☆</span>
+                                <span class="star" data-value="3">☆</span>
+                                <span class="star" data-value="4">☆</span>
+                                <span class="star" data-value="5">☆</span>
+                            </div>
+
+                            <label class="form-label">Your Feedback</label>
+                            <textarea class="form-control mb-3" id="feedback" rows="4" placeholder="Tell us about your experience..."></textarea>
+
+                            <button type="submit" class="submitButton w-100">✈ Submit Feedback</button>
+
+                        </form>
+
+                    </div>
+                    <div class="mt-3 text-center">
+                        <p id="feedback-result" class="feedback-result" style="font-size: 20px; color:rgb(122, 231, 149);"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
         <div col="col-12">
             <div class="text-center footer-section p-5 bg-dark">
                 <h1 class="Footer-heading hero-section-main-heading">
@@ -275,46 +424,691 @@
                     Join thousands of happy renters .No string <br>attached - cancel any time.
                 </p>
                 <div>
-                    <button class="hero-scetion-button-1">Get Started</button>
+                    <button class="hero-scetion-button-1" onclick="display('allproducts')">Get Started</button>
                 </div>
             </div>
         </div>
-        <div class="container-fluid pb-3">
-            <div class="row">
-                <div class="col-12 col-md-3 mt-3">
-                    <h3 class="bottom-section-heading">UrdanRentals</h3>
-                    <p class="bottom-section-paragraph">Premium fruniture & applliance rentals for modren urdon living</p>
+    </div>
+    <!---------------homesection end------------->
+
+
+    <!-----------------------Sign In ssection start----------------->
+    <div id="section_sign_in" class="">
+        <div class="signIn-bgcontainer d-flex justify-content-center align-items-center vh-100">
+
+            <div class="login-card mt-5">
+
+                <div class="text-center mb-2 ">
+                    <img src="./imag/logoimage.png" class="w-25 h-25 logo" alt="">
                 </div>
-                <div class="col-12 col-md-3 mt-3">
-                    <h4 class="bottom-section-list-heading">Categories</h4>
-                    <ul class="unorderd-list">
-                        <li class="list">Fruniture</li>
-                        <li class="list">Appliances</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-3 mt-3">
-                    <h4 class="bottom-section-list-heading">Company</h4>
-                    <ul class="unorderd-list">
-                        <li>About Us</li>
-                        <li>Contact</li>
-                        <li>Careers</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-3 mt-3">
-                    <div>
-                        <h4 class="bottom-section-list-heading">
-                            Support
-                        </h4>
-                        <ul class="unorderd-list">
-                            <li>FAQ</li>
-                            <li>Terms of Service</li>
-                            <li>Privacy Policy</li>
-                        </ul>
+
+                <h3 class="text-center fw-bold">Welcome Back</h3>
+                <p class="text-center text-muted">Sign in to manage your rentals</p>
+                <div class="mb-3">
+                    <div class="d-none" id="Full-Name">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control " id="Name" placeholder="Enter your Name" title="">
                     </div>
+                    <label class=" form-label ">Email</label>
+                    <input type="email " class="form-control" id="emailInput" placeholder="john@example.com ">
+                    <div class="d-none " id="optInputElement">
+                        <label class="form-label" name="otp">Enter OTP</label>
+                        <input type="text " id="otpinput" class="form-control " name="otp " title="">
+                    </div>
+                </div>
+
+                <button class=" otp-btn w-100 mb-3 " id="signInOtp" onclick="signInsendOtp()">Send OTP</button>
+                <button class=" otp-btn w-100 mb-3 d-none" id="createOtp" onclick="createAccountsendOtp()">Send OTP</button>
+                <button class=" otp-btn w-100 mb-3 d-none" id="verifyOtp" onclick="otpveryButton()">Verify & Sign In</button>
+
+
+                <p class="text-center">
+                    New here?
+                    <span class="create-account" id="Creareaccount" onclick="onCreateAccunt()"> Create account</span>
+                    <span class="create-account d-none" id="signIn" onclick="onSignIn()">Sign In</span>
+
+                </p>
+                <div class=" divider ">
+                    <hr>
+                    <span>or</span>
+                    <hr>
+                </div>
+
+                <button class="btn btn-outline-secondary w-100" onclick="getstAccount()">Gest account</button>
+
+            </div>
+
+        </div>
+    </div>
+    <!-------------------sign in end ---------------------->
+
+    <!--------------items section ---------------------------->
+    <div id="furniture-sofa" class="d-none pt-5 mt-3">
+        <div class="container-fluid mt-5">
+            <a href="#" class="back-btn  btn ml-3" onclick="display('section-Home')">← Back</a>
+
+
+            <div class="row mt-3">
+                <!-- Product Image -->
+                <div class="col-lg-6">
+                    <img src="./imag/Oslo 3-seater fabric sofa .jpeg" class="product-img w-100 mb-3">
+                </div>
+
+                <!-- Product Details -->
+                <div class="col-lg-6">
+
+                    <span class="badge bg-light text-dark mb-2">Furniture • Sofa</span>
+
+                    <h2 class="product-title">Oslo 3-Seater Fabric Sofa</h2>
+
+                    <p class="rating">⭐ 4.7 <span class="review">(124 reviews)</span></p>
+
+                    <p class="description">
+                        Sink into the plush comfort of our Oslo sofa. Featuring premium grey upholstery and sleek chrome legs, it's designed for modern urban living.
+                    </p>
+
+                    <div class="price-box">
+                        <h3>₹1,234 <span>/month</span></h3>
+                        <span class="discount text-dark">5% off</span>
+                        <p class="deposit">Security deposit: ₹3,000 (refundable)</p>
+                    </div>
+
+                    <h6 class="mt-2">Select Rental Tenure</h6>
+
+                    <div class="tenure-buttons">
+                        <button class="btn btn-outline-secondary">1 Month</button>
+                        <button class="btn active-tenure">3 Months (-5%)</button>
+                        <button class="btn btn-outline-secondary">6 Months (-10%)</button>
+                        <button class="btn btn-outline-secondary">12 Months (-20%)</button>
+                    </div>
+
+                    <h6 class="mt-4">Features</h6>
+
+                    <ul class="features">
+                        <li>✔ Premium fabric upholstery</li>
+                        <li>✔ Chrome-plated legs</li>
+                        <li>✔ High-density foam cushions</li>
+                        <li>✔ Stain-resistant coating</li>
+                    </ul>
+
+                    <button class="add-cart-btn w-100 mb-3 p-3" onclick="addToCart(1)"><svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="25" height="25" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                            </svg>Add to Cart</button>
+
+
                 </div>
             </div>
 
         </div>
+    </div>
+    <!-------------------Bed --------------------->
+    <div id="sectionbed" class="d-none pt-5 mt-3">
+        <div class="container-fluid mt-5">
+            <a href="#" class="back-btn ml-3 btn" onclick="display('section-Home')">← Back</a>
+
+
+            <div class="row mt-3">
+                <!-- Product Image -->
+                <div class="col-lg-6">
+                    <img src="./imag/Nordic Solid Wood Queen Bed.jpg" class="product-img w-100 mb-3">
+                </div>
+
+                <!-- Product Details -->
+                <div class="col-lg-6">
+
+                    <span class="badge bg-light text-dark mb-2">Furniture • Bed</span>
+
+                    <h2 class="product-title">Nordic Solid Wood Queen Bed</h2>
+
+                    <p class="rating">⭐ 4.8 <span class="review">(89 reviews)</span></p>
+
+                    <p class="description">
+                        Crafted from solid oak, this Scandinavian-inspired queen bed brings warmth and elegance to your bedroom.
+                    </p>
+
+                    <div class="price-box">
+                        <h3>₹1,519<span>/month</span></h3>
+                        <span class="discount text-dark">5% off</span>
+                        <p class="deposit">Security deposit: ₹4,000 (refundable)</p>
+                    </div>
+
+                    <h6 class="mt-2">Select Rental Tenure</h6>
+
+                    <div class="tenure-buttons">
+                        <button class="btn btn-outline-secondary">1 Month</button>
+                        <button class="btn active-tenure">3 Months (-5%)</button>
+                        <button class="btn btn-outline-secondary">6 Months (-10%)</button>
+                        <button class="btn btn-outline-secondary">12 Months (-20%)</button>
+                    </div>
+
+                    <h6 class="mt-4">Features</h6>
+
+                    <ul class="features">
+                        <li>✔ Solid oak construction</li>
+                        <li>✔ Integrated headboard</li>
+                        <li>✔ Under-bed storage option</li>
+                        <li>✔ Fits standard queen mattress</li>
+                    </ul>
+
+                    <button class="add-cart-btn w-100 mb-3 p-3" onclick="addToCart(2)"><svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="25" height="25" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                            </svg>Add to Cart</button>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--------Tbale------->
+    <div id="sectionTable" class="d-none pt-5 mt-3">
+        <div class="container-fluid mt-5">
+            <a href="# " class="back-btn ml-3 btn" onclick="display('section-Home')">← Back</a>
+
+
+            <div class="row mt-3 ">
+                <!-- Product Image -->
+                <div class="col-lg-6 ">
+                    <img src="./imag/Artisan Crossleg dining Table.jpg " class="product-img w-100 mb-3 ">
+                </div>
+
+                <!-- Product Details -->
+                <div class="col-lg-6 ">
+
+                    <span class="badge bg-light text-dark mb-2 ">Furniture • Table</span>
+
+                    <h2 class="product-title ">Artisan Crossleg Dining Table</h2>
+
+                    <p class="rating ">⭐ 4.5 <span class="review ">(67 reviews)</span></p>
+
+                    <p class="description ">
+                        A stunning handcrafted dining table with a bold crossleg design. Seats up to 6 comfortably.
+                    </p>
+
+                    <div class="price-box ">
+                        <h3>₹854<span>/month</span></h3>
+                        <span class="discount text-dark ">5% off</span>
+                        <p class="deposit ">Security deposit: ₹2,500 (refundable)</p>
+                    </div>
+
+                    <h6 class="mt-2 ">Select Rental Tenure</h6>
+
+                    <div class="tenure-buttons ">
+                        <button class="btn btn-outline-secondary ">1 Month</button>
+                        <button class="btn active-tenure ">3 Months (-5%)</button>
+                        <button class="btn btn-outline-secondary ">6 Months (-10%)</button>
+                        <button class="btn btn-outline-secondary ">12 Months (-20%)</button>
+                    </div>
+
+                    <h6 class="mt-4 ">Features</h6>
+
+                    <ul class="features ">
+                        <li>✔ Solid wood construction</li>
+                        <li>✔ Seats 6 people</li>
+                        <li>✔ Scratch-resistant finish</li>
+                        <li>✔ Easy assembly</li>
+                    </ul>
+
+                    <button class="add-cart-btn w-100 mb-3 p-3" onclick="addToCart(3)"><svg xmlns="http://www.w3.org/2000/svg " class="mr-2 " width="25 " height="25 " fill="currentColor " class="bi bi-cart4 " viewBox="0 0 16 16 ">
+                            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11
+            3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0 "/>
+                            </svg>Add to Cart</button>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="sectionCoolTech" class="d-none pt-5 mt-3">
+        <div class="container-fluid mt-5 ">
+            <a href="# " class="back-btn ml-3 mt-3 btn" onclick="display('section-Home')">← Back</a>
+
+
+            <div class="row mt-3 ">
+                <!-- Product Image -->
+                <div class="col-lg-6 ">
+                    <img src="./imag/CoolTech Double-Door Refrigerator.jpg" class="product-img w-100 h-75 mb-3 ">
+                </div>
+
+                <!-- Product Details -->
+                <div class="col-lg-6 ">
+
+                    <span class="badge bg-light text-dark mb-2 ">Appliance • Fridge</span>
+
+                    <h2 class="product-title ">CoolTech Double-Door Refrigerator</h2>
+
+                    <p class="rating ">⭐ 4.6 <span class="review ">(203 reviews)</span></p>
+
+                    <p class="description ">
+                        A spacious 500L double-door refrigerator with advanced cooling technology and energy-efficient design.
+                    </p>
+
+                    <div class="price-box ">
+                        <h3>₹1,139<span>/month</span></h3>
+                        <span class="discount text-dark ">5% off</span>
+                        <p class="deposit ">Security deposit: ₹3,500 (refundable)</p>
+                    </div>
+
+                    <h6 class="mt-2 ">Select Rental Tenure</h6>
+
+                    <div class="tenure-buttons ">
+                        <button class="btn btn-outline-secondary ">1 Month</button>
+                        <button class="btn active-tenure ">3 Months (-5%)</button>
+                        <button class="btn btn-outline-secondary ">6 Months (-10%)</button>
+                        <button class="btn btn-outline-secondary ">12 Months (-20%)</button>
+                    </div>
+
+                    <h6 class="mt-4 ">Features</h6>
+
+                    <ul class="features ">
+                        <li>✔ 500L capacity</li>
+                        <li>✔ Inverter compressor</li>
+                        <li>✔ Frost-free technology</li>
+                        <li>✔ Energy Star rated</li>
+                    </ul>
+
+                    <button class="add-cart-btn w-100 mb-3 p-3 " onclick="addToCart(4)"><svg xmlns="http://www.w3.org/2000/svg " class="mr-2 " width="25 " height="25 " fill="currentColor " class="bi bi-cart4 " viewBox="0 0 16 16 ">
+                            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11
+                                3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0 "/>
+                            </svg>Add to Cart</button>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="allproducts" class="d-none">
+        <div class="container-fluid py-5 mt-5 pb-3">
+
+            <h2 class="fw-bold">All Products</h2>
+            <p class="text-muted">6 items available for rent</p>
+
+            <!-- Filter Buttons -->
+            <div class="mb-4">
+                <button class="btn filter-btn active" onclick="filterProducts('all')">All</button>
+                <button class="btn filter-btn" onclick="filterProducts('sofa')">Sofa</button>
+                <button class="btn filter-btn" onclick="filterProducts('bed')">Bed</button>
+                <button class="btn filter-btn" onclick="filterProducts('table')">Table</button>
+                <button class="btn filter-btn" onclick="filterProducts('fridge')">Fridge</button>
+                <button class="btn filter-btn" onclick="filterProducts('washing')">Washing Machine</button>
+                <button class="btn filter-btn" onclick="filterProducts('tv')">TV</button>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-6 col-sm-10 mb-3 product" data-category="sofa">
+                    <div class="card product-card">
+                        <img src="./imag/Oslo 3-seater fabric sofa .jpeg" class="card-img-top">
+
+                        <div class="card-body">
+                            <h6>Oslo 3-Seater Fabric Sofa</h6>
+                            <p class="rating">⭐ 4.7</p>
+                            <h6 class="price">₹1,299</h6>
+                            <button class=" add-btn" onclick="addToCart(1)">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-6 col-sm-10  mb-3 product" data-category="bed">
+                    <div class="card product-card">
+                        <img src="./imag/Nordic Solid Wood Queen Bed.jpg" class="card-img-top">
+
+                        <div class="card-body">
+                            <h6>Nordic Solid Wood Queen Bed</h6>
+                            <p class="rating">⭐ 4.8</p>
+                            <h6 class="price">₹1,599</h6>
+                            <button class=" add-btn" onclick="addToCart(2)">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-6 col-sm-10 product  mb-3" data-category="table">
+                    <div class="card product-card">
+                        <img src="./imag/Artisan Crossleg dining Table.jpg" class="card-img-top">
+
+                        <div class="card-body">
+                            <h6>Artisan Dining Table</h6>
+                            <p class="rating">⭐ 4.5</p>
+                            <h6 class="price">₹899</h6>
+                            <button class=" add-btn" onclick="addToCart(3)">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-6 col-sm-10 product mb-3" data-category="fridge">
+                    <div class="card product-card">
+                        <img src="./imag/CoolTech Double-Door Refrigerator.jpg" class="card-img-top">
+
+                        <div class="card-body">
+                            <h6>Double Door Refrigerator</h6>
+                            <p class="rating">⭐ 4.6</p>
+                            <h6 class="price">₹1,199</h6>
+                            <button class=" add-btn" onclick="addToCart(4)">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-lg-3 product col-sm-10 col-md-6 mb-3" data-category="washing">
+                    <div class="card product-card">
+                        <img src="./imag/load washer.jpg" class="card-img-top">
+
+                        <div class="card-body">
+                            <h6>Front Load Washer</h6>
+                            <p class="rating">⭐ 4.4</p>
+                            <h6 class="price">₹999</h6>
+                            <button class=" add-btn" onclick="addToCart(5)">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-lg-3 product col-sm-10 col-md-6 mb-3" data-category="tv">
+                    <div class="card product-card">
+                        <img src="./imag/ultraview smart tv.jpg" class="card-img-top">
+
+                        <div class="card-body">
+                            <h6>55" UltraView Smart TV</h6>
+                            <p class="rating">⭐ 4.7</p>
+                            <h6 class="price">₹1,499</h6>
+                            <button class=" add-btn" onclick="addToCart(6)">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="cartsection" class="cartsection d-none ">
+        <div id="cart-empty" class="">
+            <div class="container d-flex justify-content-center align-items-center vh-100">
+
+                <div class="text-center empty-cart">
+
+                    <div class="cart-icon">
+                        🛍
+                    </div>
+
+                    <h2>Your cart is empty</h2>
+
+                    <p class="text-muted">
+                        Start adding items to rent
+                    </p>
+
+                    <a href="#allproducts" class="btn  btn-primary browse-btn" onclick="display('allproducts')">Browse Products</a>
+
+                </div>
+
+            </div>
+        </div>
+        <div id="cartitems" class="d-none">
+            <div class="container-fluid py-5" style="margin-top:80px; background-size: cover;">
+
+                <h2 class="fw-bold">Your Cart</h2>
+                <p class="text-muted">1 item</p>
+
+                <div class="row g-4">
+
+                    <!-- Cart Item -->
+                    <div class="col-lg-8">
+                        <ul id="Cart-items-container" style="list-style-type: none;"></ul>
+                    </div>
+
+                    <!-- Order Summary -->
+
+                    <div class="col-lg-4">
+
+                        <div class="summary-card">
+
+                            <h5 class="fw-bold">Order Summary</h5>
+
+                            <div class="d-flex justify-content-between mt-3">
+                                <span>Monthly Rent</span>
+                                <span id="rent">₹1,234</span>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <span>Security Deposit</span>
+                                <span id="deposit">₹3,000</span>
+                            </div>
+
+                            <hr>
+
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Due Today</span>
+                                <span class="text-warning" id="total">₹4,234</span>
+                            </div>
+
+                            <p class="text-muted small">(1st month rent + deposit)</p>
+
+                            <button class="btn checkout-btn w-100" onclick="display('Payment-Section')">Proceed to Checkout →</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="Payment-Section" class="d-none mt-5">
+
+        <div class="container  my-5">
+            <h2 class="mb-4">Checkout</h2>
+
+            <div class="row">
+
+                <!-- LEFT -->
+                <div class="col-lg-8">
+
+                    <div class="card-box">
+                        <h5><i class="bi bi-geo-alt text-warning"></i> Delivery Address</h5>
+
+                        <div class="mb-3 mt-3">
+                            <label class="form-label">Full Address</label>
+                            <input type="text" id="address" class="form-control" placeholder="House/Flat No., Street">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label">City</label>
+                                <input type="text" id="city" class="form-control" placeholder="Mumbai">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Pincode</label>
+                                <input type="text" id="pincode" class="form-control" placeholder="400001">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-box">
+                        <h5><i class="bi bi-calendar text-warning"></i> Delivery Date</h5>
+
+                        <div class="mt-3">
+                            <label class="form-label">Preferred Date</label>
+                            <input type="date" id="date" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="card-box">
+                        <h5><i class="bi bi-credit-card text-warning"></i> Payment Method</h5>
+
+                        <div class="payment-option" onclick="Paymentoption('upisection')">
+                            <strong>UPI</strong><br>
+                            <small>Google Pay, PhonePe, Paytm</small>
+                        </div>
+
+                        <div class="payment-option" onclick="Paymentoption('DebitCardsection')">
+                            <strong>Credit/Debit Card</strong><br>
+                            <small>Visa, Mastercard, RuPay</small>
+                        </div>
+
+                        <div class="payment-option d-flex flex-row justify-content-between" onclick="Paymentoption('cashondelevery')">
+                            <div class="">
+                                <strong>Cash on Delivery</strong><br>
+                                <small>Pay when items arrive</small>
+                            </div>
+                            <div class="text-right d-none" id="cashondelevery">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="color:green ;" fill="currentColor" class="bi bi-patch-check" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                                <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="payment-option mt-3 d-none" id="upisection">
+                            <div class="card p-4 payment-card">
+                                <div class="mb-3">
+                                    <label class="form-label">UPI ID</label>
+                                    <input type="text" id="upi" class="form-control input-style" placeholder="your@upi">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="payment-option mt-3 d-none" id="DebitCardsection">
+                            <div class="card p-4 payment-card">
+
+                                <!-- Card Number -->
+                                <div class="mb-3">
+                                    <label class="form-label">Card Number</label>
+                                    <input type="text" id="cardNumber" class="form-control input-style" placeholder="1234 5678 9012 3456">
+                                </div>
+
+                                <!-- Expiry + CVV -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Expiry</label>
+                                        <input type="text" id="expiry" class="form-control input-style" placeholder="MM/YY">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label">CVV</label>
+                                        <input type="password" id="cvv" class="form-control input-style" placeholder="123">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <button class="place-order-btn" onclick="validateForm()">Place Order — ₹4,234</button>
+
+                </div>
+
+                <!-- RIGHT -->
+                <div class="col-lg-4">
+                    <div class="order-summary">
+
+                        <h5>Items(<span class="cartCont">1</span>)</h5>
+                        <ul id="numberofitems" style="list-style-type: none;">
+
+                        </ul>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-between">
+                            <span>Monthly Rent</span>
+                            <span>₹1,234</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <span>Deposit</span>
+                            <span>₹3,000</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!---------order secussfull-->
+    <div id="ordersucessfullsection" class="d-none pt-5 mt-5">
+        <div class="success-container d-flex justify-content-center align-items-center pt-5 mt-5">
+
+            <div class="text-center">
+
+                <!-- Check Icon -->
+                <div class="success-icon mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="w-100" style="color:green ;" fill="currentColor" class="bi bi-patch-check" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z"/>
+                </svg>
+                </div>
+
+                <!-- Title -->
+                <h2 class="fw-bold">Order Confirmed!</h2>
+
+                <!-- Subtitle -->
+                <p class="text-muted mt-2">
+                    Your rental items will be delivered on
+                    <span id="delivery-date"></span>. You can track your order in the dashboard.
+                </p>
+
+                <!-- Buttons -->
+                <div class="mt-4">
+                    <button class="btn btn-warning me-2 px-4">Go to Dashboard</button>
+                    <button class="btn btn-outline-secondary px-4">Continue Browsing</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!----end----------------------------------->
+
+    <!-------------------Footer section----------------------------------->
+    <div class="container-fluid bg-white pb-3 d-none">
+        <div class="row">
+            <div class="col-12 col-md-3 mt-3">
+                <h3 class="bottom-section-heading">UrdanRentals</h3>
+                <p class="bottom-section-paragraph">Premium fruniture & applliance rentals for modren urdon living</p>
+            </div>
+            <div class="col-12 col-md-3 mt-3">
+                <h4 class="bottom-section-list-heading">Categories</h4>
+                <ul class="unorderd-list">
+                    <li class="list">Fruniture</li>
+                    <li class="list">Appliances</li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-3 mt-3">
+                <h4 class="bottom-section-list-heading">Company</h4>
+                <ul class="unorderd-list">
+                    <li>About Us</li>
+                    <li>Contact</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-3 mt-3">
+                <div>
+                    <h4 class="bottom-section-list-heading">
+                        Support
+                    </h4>
+                    <ul class="unorderd-list">
+                        <li>FAQ</li>
+                        <li>Terms of Service</li>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
         <hr>
         <div class="p-3 text-center unorderd-list">
             <h5> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
@@ -323,50 +1117,11 @@
             </h5>
         </div>
     </div>
-    <!---------------homesection end------------->
-    <!-----------------------Sign In ssection start----------------->
-    <div id="section_sign_in" class="d-none">
-        <div class="signIn-bgcontainer d-flex justify-content-center align-items-center vh-100">
 
-            <div class="login-card mt-5">
-
-                <div class="text-center mb-2 ">
-                    <img src="./logoimage.png" class="w-25 h-25 logo" alt="">
-                </div>
-
-                <h3 class="text-center fw-bold">Welcome Back</h3>
-                <p class="text-center text-muted">Sign in to manage your rentals</p>
-                <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" id="emailInput" placeholder="john@example.com">
-                    <div class="d-none" id="optInputElement">
-                        <label class="form-label" name="otp">Enter OTP</label>
-                        <input type="text" class="form-control" name="otp">
-                    </div>
-                </div>
-
-                <button class=" otp-btn w-100 mb-3" id="Send-OTP-Button" onclick="sendOtp()">Send OTP</button>
-
-                <p class="text-center">
-                    New here? <span class="create-account"><a href="..">Create account</a></span>
-                </p>
-                <div class="divider">
-                    <hr>
-                    <span>or</span>
-                    <hr>
-                </div>
-
-                <button class="btn btn-outline-secondary w-100">Demo: Login as Admin</button>
-
-            </div>
-
-        </div>
-    </div>
-    <script src="./script.js">
-    </script>
+    <div>
+        <!------------------footer end---------------->
+        <script src="./script.js ">
+        </script>
 </body>
 
-
 </html>
-
-
